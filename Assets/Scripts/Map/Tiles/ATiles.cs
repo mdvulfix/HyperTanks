@@ -5,7 +5,7 @@ namespace HyperTanks
     public abstract class ATiles: MonoBehaviour
     {
         
-        public Vector2Int Position {get; protected set;}
-
+        public Vector3 Position {get; protected set;}
+        
     }
 }
