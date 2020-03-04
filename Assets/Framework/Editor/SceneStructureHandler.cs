@@ -10,12 +10,12 @@ using UnityEngine.SceneManagement;
 
 
 [InitializeOnLoad]
-public class SceneHandler
+public class SceneStructureHandler
 {
 
     private static Dictionary<string, GameObject> folderStructure = new Dictionary<string, GameObject>(10);
 
-    static SceneHandler()
+    static SceneStructureHandler()
     {
         EditorSceneManager.newSceneCreated += CreateScene;
 
