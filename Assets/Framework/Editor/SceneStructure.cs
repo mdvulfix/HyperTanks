@@ -10,12 +10,20 @@ using UnityEngine.SceneManagement;
 
 
 [InitializeOnLoad]
-public class SceneStructureHandler
+public static class SceneStructure
 {
 
+    private static string setupFolder = "[SETUP]";
+    private static string worldFolder = "[WORLD]";
+    private static string uiFolder = "[UI]";
+    private static string poolFolder = "[POOL]";
+    private static string eventFolder = "[EVENT]";
+    
+    
+    
     private static Dictionary<string, GameObject> folderStructure = new Dictionary<string, GameObject>(10);
 
-    static SceneStructureHandler()
+    static SceneStructure()
     {
         EditorSceneManager.newSceneCreated += CreateScene;
 
@@ -41,23 +49,23 @@ public class SceneStructureHandler
 
     private static void CreateFolderStructure()
     {
-        var _main = CreateFolder("[MAIN]");
+        var _main = CreateFolder(setupFolder);
         CreateFolder("Light", _main.transform);
         CreateFolder("Cameras", _main.transform);
 
-        var _world = CreateFolder("[WORLD]");
+        var _world = CreateFolder(worldFolder);
         CreateFolder("Static", _world.transform);
         CreateFolder("Dynamic", _world.transform);
         
-        var _ui =  CreateFolder("[UI]");
+        var _ui =  CreateFolder(uiFolder);
         var _canvas = CreateFolder("Canvas", _ui.transform);
         _canvas.AddComponent<Canvas>();
         _canvas.AddComponent<CanvasScaler>();
 
-        CreateFolder("[POOL]");
+        CreateFolder(poolFolder);
 
 
-        var _event = CreateFolder("[EVENT]");
+        var _event = CreateFolder(eventFolder);
         var _eventSystem = CreateFolder("EventSystem", _event.transform);
         _eventSystem.AddComponent<EventSystem>();
     }

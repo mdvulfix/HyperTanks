@@ -1,8 +1,8 @@
 using UnityEngine;
 
-namespace HyperTanks.Framework.Functions
+namespace HyperTanks.Framework
 {
-    public class Functions: MonoBehaviour
+    public static class Functions
     {
         //Создание игрового объекта на сцене
         public static GameObject CreateObject(string name)
