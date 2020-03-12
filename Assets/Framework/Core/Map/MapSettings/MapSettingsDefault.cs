@@ -4,21 +4,20 @@ namespace HyperTanks.Framework
 {
     public class MapSettingsDefault: IMapSettings
     {
-        public Vector2Int Resolution {get; private set;}
+        public int Width {get; private set;}
+        public int Height {get; private set;}
 
         
         public MapSettingsDefault()
         {   
-            Resolution = new Vector2Int(100, 100);
-
+            SetResolution(10, 10); 
         }
     
 
-
-
-        public void SetResolution(Vector2Int resolution)
+        public void SetResolution(int width, int height)
         {
-            this.Resolution = resolution;
+            this.Width = width;
+            this.Height = height;
 
 
         }

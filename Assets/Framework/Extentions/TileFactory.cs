@@ -1,15 +1,10 @@
-using System.Collections.Generic;
-
 namespace HyperTanks.Framework
 {
-    
-    
-    public static class TileFactory<T> where T: Tile, new()
+    public static class TileFactory<T> where T: ATile, new()
     {
-        public static T CreateTile()
+        public static T Create()
         {
-            T tile = new T();
-            return tile;
+            return new T();
         }
     }
 }
