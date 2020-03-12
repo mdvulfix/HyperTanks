@@ -28,7 +28,7 @@ namespace HyperTanks
             
             public void Generate()
             {
-                Generator.Create(Settings);
+                Generator.Generate(Settings);
 
             }
 

@@ -7,19 +7,10 @@ namespace HyperTanks
                
         public ITileProperties TileProperties {get; private set;}
 
-        public TileBackground(Vector3 position)
+        public TileBackground(Vector2Int position)
         {
             this.Position = position;
             this.TileProperties = new TilePropertiesDefault();
         }
-
-        private void Start() 
-        {
-            
-            transform.position = this.Position;
-
-        }
-
-
     }
 }

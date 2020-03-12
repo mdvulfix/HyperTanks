@@ -10,8 +10,25 @@ namespace HyperTanks
                 // Initialaze some processes...
                 Messanger.Send("Initialization process was started");
 
-                // Create map
-                var _map = new Map();
+                // Create scene controller              
+                //TODO: Create scene controller
+
+                // Create game controller              
+                var gameControl = new GameControl();
+                Messanger.Send("Game controller was created");
+                
+                gameControl.CreateMap();
+                
+                // Create data controller
+                //TODO: Create data controller
+
+                // Create sound controller
+                //TODO: Create sound controller
+
+                //
+
+
+              
 
 
 

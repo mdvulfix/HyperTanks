@@ -2,32 +2,46 @@ using UnityEngine;
 
 namespace HyperTanks
 {    namespace Framework
-    {   public class MapGeneratorDefault: IMapGenerator
+    {   public class MapGeneratorDefault: MonoBehaviour, IMapGenerator
         {
-            public ITile[,] grid;
+            
+            private int width;                
+            private int height;
+            private int layer;
+            private int AllLayers = 10;
+            
+            private GameObject mapFolder;
+            private ITile[,,] map;
             
             
-            public void Create(IMapSettings settings)
+            public void Generate(IMapSettings settings)
             {
-                
-                var _width = settings.Resolution.x;
-                var _height = settings.Resolution.y;
-                
-                // Создаем карту;
-                GameObject _map;
-                _map = Functions.CreateObject("Map");
-                SpriteRenderer _spriteRenderer = _map.AddComponent<SpriteRenderer>();
-                _spriteRenderer.sprite = Functions.CreateSprite(width: _width, height: _height);
+                mapFolder = Functions.CreateObject("MAP");
+                map = new ITile[width,height, AllLayers];
+                CreateMapLayer<TileBackground>(settings, "Background", 0);
+
+            }
+                       
+            public void CreateMapLayer<T>(IMapSettings settings, string name, int layer)
+            {
+            
+                width = settings.Resolution.x;
+                height = settings.Resolution.y; 
+            
+                GameObject _mapBackground = Functions.CreateObject(name, mapFolder);
+                SpriteRenderer _spriteRenderer = _mapBackground.AddComponent<SpriteRenderer>();
+                _spriteRenderer.sprite = Functions.CreateSprite(width: width, height: height);
                 _spriteRenderer.sortingOrder = 0;   
                 
-                for (int y = 0; y < _height; y++)
+                for (int y = 0; y < height; y++)
                 {
-                    for (int x = 0; x < _width; x++)
+                    for (int x = 0; x < width; x++)
                     {
-                        grid [x,y]  = new TileBackground(new Vector3(x, y));
+                        //map [x,y,layer]  =  TileFactory<T>.CreateTile() as ITile;
 
                     }
                 }  
+
             }
 
 

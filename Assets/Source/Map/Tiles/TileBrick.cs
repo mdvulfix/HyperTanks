@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace HyperTanks
 {
-    public class TileBrick: ATiles, ITile
+    public class TileBrick: ATile, ITile
     {
         
         public ITileProperties TileProperties {get; private set;}

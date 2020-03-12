@@ -5,10 +5,15 @@ namespace HyperTanks.Framework
     public static class Functions
     {
         //Создание игрового объекта на сцене
-        public static GameObject CreateObject(string name)
-        {        
-            return new GameObject(name);
-        }
+         public static GameObject CreateObject(string name, GameObject parent = null)
+            {
+                var _obj = new GameObject(name);
+                if(parent)
+                {
+                    _obj.transform.parent = parent.transform;
+                }
+                return _obj;
+            }
         
         public static Sprite CreateSprite(int width = 1, int height = 1, Color color = default(Color))
         {

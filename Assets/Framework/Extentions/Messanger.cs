@@ -1,13 +1,17 @@
 using UnityEngine;
 
-namespace HyperTanks.Framework
-{
-    public static class Messanger
+namespace HyperTanks
+{   namespace Framework
     {
-        public static void Send(string message)
+        public static class Messanger
         {
-            Debug.Log(message);
+            public static void Send(string message)
+            {
+                Debug.Log(message);
 
+            }
         }
+        
     }
+
 }

@@ -4,7 +4,7 @@ namespace HyperTanks
         public interface IMapGenerator
         {
             
-            void Create(IMapSettings settings);
+            void Generate(IMapSettings settings);
 
 
         }
