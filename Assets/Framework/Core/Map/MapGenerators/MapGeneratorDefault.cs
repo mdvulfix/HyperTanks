@@ -30,7 +30,8 @@ namespace HyperTanks
                     {
                         GameObject _mapBackground = Functions.CreateObject(name + " " + x.ToString() + ":" + y.ToString(), mapFolder);
                         SpriteRenderer _spriteRenderer = _mapBackground.AddComponent<SpriteRenderer>();
-                        _spriteRenderer.sprite = Functions.CreateSprite(1, 1, Color.blue);
+                        _spriteRenderer.sprite = Functions.CreateSprite(1, 1, Color.white);
+                        _spriteRenderer.color = Color.red;
                         _spriteRenderer.sortingOrder = layer;   
 
                         T _tile = _mapBackground.AddComponent<T>();

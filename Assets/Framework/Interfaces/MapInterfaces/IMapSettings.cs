@@ -1,10 +1,11 @@
+using System;
+using System.Collections.Generic;
+
 namespace HyperTanks.Framework
 {
     public interface IMapSettings
     {
-         
-        int Width {get;}
-        int Height {get;}
+        List<IData> Data {get; } 
 
 
 
