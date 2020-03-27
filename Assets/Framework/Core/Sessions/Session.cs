@@ -8,14 +8,14 @@ namespace HyperTanks
         {
 
             private ProcessInitialization processInitialization;
-            private ProcessUpdate processUpdate;
+            private ProcessUpdating processUpdating;
             //private ProcessClose processClose;
             
             
             public Session()
             {
                 processInitialization = new ProcessInitialization();
-                processUpdate = new ProcessUpdate();
+                processUpdating = new ProcessUpdating();
 
             }
 
@@ -26,18 +26,11 @@ namespace HyperTanks
             {
 
                 processInitialization.OnStart();
-                processUpdate.OnStart();
+
 
 
             }      
             
-            
-            public void Update() 
-            {
-                processUpdate.OnUpdate();
-            
-            
-            }
         }
     }   
 }

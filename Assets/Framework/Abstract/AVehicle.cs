@@ -2,7 +2,7 @@
 
 namespace HyperTanks
 {
-    public abstract class AVehicle: Cache
+    public abstract class AVehicle: Actor
     {
         
 

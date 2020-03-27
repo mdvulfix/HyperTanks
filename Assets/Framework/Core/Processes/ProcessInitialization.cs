@@ -2,7 +2,7 @@
 
 namespace HyperTanks
 {   namespace Framework
-    {   public class ProcessInitialization
+    {   public class ProcessInitialization: Process
         {
 
             public void OnStart()
